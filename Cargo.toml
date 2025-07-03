@@ -1,0 +1,12 @@
+[package]
+name = "iot_driver_core"
+version = "0.1.0"
+edition = "2021"
+authors = ["Jack Xiao <xiaopanfeng@uqkj.cn>"]
+description = "iot driver core"
+license = "MIT OR Apache-2.0"  # 选择适当的许可证
+repository = "https://github.com/jackxiao2018/iot-driver-core.git"
+keywords = ["iot", "driver"]  # 有助于搜索的分类关键词
+categories = ["algorithms", "data-structures"]  # 从 crates.io 分类中选择
+
+[dependencies]
