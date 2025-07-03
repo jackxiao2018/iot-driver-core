@@ -10,3 +10,6 @@ keywords = ["iot", "driver"]  # 有助于搜索的分类关键词
 categories = ["algorithms", "data-structures"]  # 从 crates.io 分类中选择
 
 [dependencies]
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
