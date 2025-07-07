@@ -1,42 +1,21 @@
-use crate::driver::driver::{ConnectParam, DriverAttribute, DriverFunction, InitialParam};
+use crate::driver::driver::{InitialParam, TupleFrame};
 
 /// 驱动类
-pub struct DeviceDriverBae {
+pub trait DeviceDriverBae {
 
-}
+    // 初始化驱动功能参数
+    fn init_function();
 
-impl DeviceDriverBae {
+    // 初始化连接参数
+    fn init_connect_params();
 
-    /// 初始化功能参数
-    pub fn init_function() -> DriverFunction {
+    // 初始化连接
+    fn initial(init_param: InitialParam);
 
-        let driver_attributes: Vec<DriverAttribute> = Vec::new();
+    // 属性读写
+    fn access_attribute(tuple_frame: TupleFrame);
 
-        DriverFunction {
+    // 驱动反初始化
+    fn un_initial();
 
-            driver_attributes: driver_attributes,
-
-        }
-    }
-
-    /// 初始化连接参数
-    pub fn init_connect_params() -> Vec<ConnectParam> {
-        Vec::new()
-    }
-
-    /// 驱动初始化
-    pub fn initial(init_param: InitialParam) -> i32 {
-         1
-    }
-
-    /// 驱动反初始化
-    pub fn un_initial() -> i32 {
-        1
-    }
-
-    /// 加载属性的读写
-    pub fn access_attribute() {
-
-    }
-    
 }
