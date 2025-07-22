@@ -76,3 +76,12 @@ pub struct TupleFrame {
 
 }
 
+/// 属性读写入参 操作帧
+#[derive(Serialize, Deserialize)]
+pub struct DriverResult {
+    // 操作类型：读or写
+    pub result: bool,
+    // 待处理的属性列表
+    pub attribute_actions: Vec<TslAttributeAction>,
+
+}
