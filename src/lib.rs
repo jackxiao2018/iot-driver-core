@@ -103,19 +103,25 @@ pub struct DeviceTag {
     // 设备功能标签
     pub identifier: String,
     // 设备功能名称
+    #[serde(rename = "identifierName")]
     pub identifier_name: String,
     // 类型:事件,服务,属性
     #[serde(rename = "type")]
     pub tag_type: String,
     // 采集间隔,单位ms
+    #[serde(rename = "accessCycle")]
     pub access_cycle: i64,
     // 驱动功能名称
+    #[serde(rename = "functionName")]
     pub function_name: String,
     // 驱动功能参数
+    #[serde(rename = "functionParam")]
     pub function_param: String,
     // 数据类型 INT DOUBLE FLOAT
+    #[serde(rename = "dataType")]
     pub data_type: String,
     // 读写类型： R: 只读 W: 只写 RW: 读写
+    #[serde(rename = "accessMode")]
     pub access_mode: String,
 }
 
