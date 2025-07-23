@@ -1,5 +1,11 @@
 use serde::{Deserialize, Serialize};
 
+// 定义公共常量
+// 所有设备只存ID
+pub const REDIS_KEY_DEVICE_ALL: &str = "IOT:DEVICE:ALL";
+// 设备基本信息
+pub const REDIS_KEY_DEVICE_INFO: &str = "IOT:DEVICE:INFO:";
+
 /// 连接参数
 #[derive(Serialize, Deserialize)]
 pub struct ConnectParam {
