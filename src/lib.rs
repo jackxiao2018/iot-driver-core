@@ -165,9 +165,6 @@ pub struct GatewayDriverInstance {
     // 关联的驱动
     #[serde(rename = "gatewayDriver")]
     pub gateway_driver: GatewayDriver,
-    // 设备列表
-    #[serde(rename = "deviceIds")]
-    pub device_ids: Vec<String>,
     // 通道协议类型： 9、BACNetIP
     #[serde(rename = "channelType")]
     pub channel_type: String,
