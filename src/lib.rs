@@ -193,8 +193,6 @@ pub struct Device {
     // 驱动实例
     #[serde(rename = "gatewayDriverInstance")]
     pub gateway_driver_instance: GatewayDriverInstance,
-    // 标签
-    pub extra: String,
     // 租户ID
     #[serde(rename = "tenantId")]
     pub tenant_id: i32,
