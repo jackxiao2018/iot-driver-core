@@ -7,7 +7,7 @@ pub const REDIS_KEY_DEVICE_ALL: &str = "IOT:DEVICE:ALL";
 pub const REDIS_KEY_DEVICE_INFO: &str = "IOT:DEVICE:INFO:";
 
 /// 连接参数
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 pub struct ConnectParam {
     //参数名称
     pub name: String,
@@ -18,14 +18,14 @@ pub struct ConnectParam {
 }
 
 /// 初始化参数
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 pub struct InitialParam {
     // 参数列表
     pub connect_params: Vec<ConnectParam>,
 }
 
 /// 驱动初始化参数属性
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 pub struct DriverAttribute {
     // 功能ID
     pub driver_function_id: String,
@@ -36,7 +36,7 @@ pub struct DriverAttribute {
 }
 
 /// 驱动功能
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 pub struct DriverFunction {
 
     // 驱动属性列表
@@ -45,7 +45,7 @@ pub struct DriverFunction {
 }
 
 /// 属性操作枚举
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 pub enum AttributeOperationEnum {
     //读
     Read,
@@ -54,7 +54,7 @@ pub enum AttributeOperationEnum {
 }
 
 ///  物模属性行为
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 pub struct TslAttributeAction {
     // tagid
     pub id: String,
@@ -73,7 +73,7 @@ pub struct TslAttributeAction {
 }
 
 /// 属性读写入参 操作帧
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 pub struct TupleFrame {
     // 操作类型：读or写
     pub operation: AttributeOperationEnum,
@@ -83,7 +83,7 @@ pub struct TupleFrame {
 }
 
 /// 属性读写入参 操作帧
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 pub struct DriverResult {
     // 操作类型：读or写
     pub result: bool,
@@ -93,7 +93,7 @@ pub struct DriverResult {
 }
 
 /// 点位配置
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 pub struct DeviceTag {
     // 设备标识符
     #[serde(rename = "devId")]
@@ -126,7 +126,7 @@ pub struct DeviceTag {
 }
 
 /// 网关驱动
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 pub struct GatewayDriver {
 
     // 主键
@@ -150,7 +150,7 @@ pub struct GatewayDriver {
 }
 
 /// 驱动实例
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 pub struct GatewayDriverInstance {
     // 主键
     pub id: String, 
@@ -168,7 +168,7 @@ pub struct GatewayDriverInstance {
 }
 
 /// 设备基本信息
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 pub struct Device {
     // 设备标识符
     #[serde(rename = "devId")]
