@@ -248,3 +248,40 @@ pub struct DevicePacket {
     // 设备数据
     pub data: HashMap<String, String>,
 }
+
+/// 数据
+#[derive(Serialize, Deserialize, Clone)]
+pub struct Updata {
+    // 设备类key
+    #[serde(rename = "pk")]
+    pub product_key: String,
+    // 设备ID
+    #[serde(rename = "devId")]
+    pub device_id: String,
+    // 设备编号
+    #[serde(rename = "devNo")]
+    pub device_number: String,
+    // 设备名称
+    #[serde(rename = "devName")]
+    pub device_name: String,
+    // 扩展属性
+    pub extra: String,
+    // unix时间戳
+    pub time: String,
+    // 以键值对方式上报数据 key为属性功能标识符，value为属性值
+    pub params: HashMap<String, String>,
+}
+
+/// 下发指令
+#[derive(Serialize, Deserialize, Clone)]
+pub struct AttrUpDataPacket {
+    // 操作类型
+    pub operate: String,
+    // 操作ID
+    #[serde(rename = "operateId")]
+    pub operate_id: i64,
+    // 上报的数据
+    pub data: Updata,
+    // 响应码
+    pub code: String,
+}
