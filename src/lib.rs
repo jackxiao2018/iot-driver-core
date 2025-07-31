@@ -236,6 +236,7 @@ pub struct PacketOld {
     pub extra: String,
     // 设备点表配置列表
     pub time: String,
+    pub identifier: String,
     // 驱动实例
     pub val: String,
     // 设备secret
