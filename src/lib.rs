@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+pub mod kafka_topic_contrant;
+
 // 定义公共常量
 // 所有设备只存ID
 pub const REDIS_KEY_DEVICE_ALL: &str = "IOT:DEVICE:ALL";
@@ -196,4 +198,38 @@ pub struct Device {
     // 租户ID
     #[serde(rename = "tenantId")]
     pub tenant_id: i32,
+}
+
+/// 消息体Packet元数据
+#[derive(Serialize, Deserialize, Clone)]
+pub struct Packet {
+    // 设备标识符
+    pub device_id: String,
+    // 设备编号
+    pub device_number: String,
+    // 设备名称
+    pub device_name: String,
+    // 产品key
+    pub product_key: String,
+    // 设备点表配置列表
+    pub identifier: String,
+    // 驱动实例
+    pub val: String,
+    // 设备secret
+    pub time: String,
+    // 工控机编号
+    pub control_number: String,
+}
+
+/// 消息体Packet元数据
+#[derive(Serialize, Deserialize, Clone)]
+pub struct DeviceOnlineStatus {
+    // 设备标识符
+    pub device_id: String,
+    // 设备编号
+    pub device_number: String,
+    // 设备名称
+    pub device_name: String,
+    // 设备在离线状态: true: 在线 false: 离线
+    pub online_status: bool,
 }

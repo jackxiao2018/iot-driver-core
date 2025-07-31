@@ -1,0 +1,2 @@
+
+pub const TOPIC_DEVICE_PACKET: &str = "TOPIC_DEVICE_PACKET";
