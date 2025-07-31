@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 use serde::{Deserialize, Serialize};
 
 pub mod kafka_topic_contrant;
@@ -232,4 +234,17 @@ pub struct DeviceOnlineStatus {
     pub device_name: String,
     // 设备在离线状态: true: 在线 false: 离线
     pub online_status: bool,
+}
+
+/// 设备Packet
+#[derive(Serialize, Deserialize, Clone)]
+pub struct DevicePacket {
+    // 设备编号
+    pub device_number: String,
+    // 设备名称
+    pub device_name: String,
+    // 工控机编号
+    pub control_no: String,
+    // 设备数据
+    pub data: HashMap<String, String>,
 }

@@ -1,6 +1,6 @@
 [package]
 name = "iot_driver_core"
-version = "0.13.1"
+version = "0.13.2"
 edition = "2021"
 authors = ["Jack Xiao <xiaopanfeng@uqkj.cn>"]
 description = "iot driver core"
