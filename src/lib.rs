@@ -225,6 +225,34 @@ pub struct Packet {
 
 /// 消息体Packet元数据
 #[derive(Serialize, Deserialize, Clone)]
+pub struct PacketOld {
+    // 设备标识符
+    pub pk: String,
+    // 设备编号
+    pub devId: String,
+    // 设备名称
+    pub devName: String,
+    // 产品key
+    pub extra: String,
+    // 设备点表配置列表
+    pub time: String,
+    // 驱动实例
+    pub val: String,
+    // 设备secret
+    pub tableName: String,
+    // 工控机编号
+    pub devNo: String,
+    pub controlNo: String,
+}
+
+/// 消息体Packet元数据
+#[derive(Serialize, Deserialize, Clone)]
+pub struct DeviceItem {
+    pub devId: String,
+}
+
+/// 消息体Packet元数据
+#[derive(Serialize, Deserialize, Clone)]
 pub struct DeviceOnlineStatus {
     // 设备标识符
     pub device_id: String,
