@@ -75,7 +75,7 @@ dependencies = [
 
 [[package]]
 name = "iot_driver_core"
-version = "0.13.3"
+version = "0.13.4"
 dependencies = [
  "serde",
  "serde_json",
